@@ -9,19 +9,17 @@ namespace Inheritance_Studio_Quizzes
     public abstract class Question
     {
         public string QuestionText { get; set; }
+        public int Points { get; set; }
 
-        public List<string> PossibleAnswers { get; set; }
-
-        public Question(string questionText, List<string> possibleAnswers)
+        public Question(string questionText, int points)
         {
             QuestionText = questionText;
-            PossibleAnswers = possibleAnswers;
+            Points = points;
         }
 
-        public void DisplayQuestion()
-        {
-            Console.WriteLine(QuestionText);
-        }
+        public abstract void DisplayPossibleAnswers();
+
+        public abstract int GetUserAnswer();
 
     }
 }
